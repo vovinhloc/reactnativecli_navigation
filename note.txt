@@ -1,0 +1,10 @@
+npx react-native@latest init navigate2
+D:\myworking\test\reactnative\cli\MyFirstApp\android\local.properties
+sdk.dir=C:\\Users\\<your-username>\\AppData\\Local\\Android\\Sdk
+
+npm install @react-navigation/native
+npm install react-native-screens react-native-safe-area-context
+npm install @react-navigation/native-stack
+
+https://reactnative.dev/docs/navigation
+
