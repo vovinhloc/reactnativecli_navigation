@@ -1,0 +1,2 @@
+navigation.navigate("Details") : di toi Details, neu dang o Details thi` thoi
+navigation.push("Details") : di toi Details va them Details vao history stack

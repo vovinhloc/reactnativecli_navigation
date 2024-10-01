@@ -4,22 +4,51 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 // import { View } from "react-native-reanimated/lib/typescript/Animated";
-import { Text, View } from "react-native";
+import { Button, Text, View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Home Screen1</Text>
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 10,
+        }}
+      >
+        <Text>Home Screen1a</Text>
+        <Button
+          title="Go to Details"
+          onPress={() => navigation.navigate("Details")}
+        />
+        <Button title="Go Home" onPress={() => navigation.navigate("Home)")} />
+        <Button title="Go back" onPress={() => navigation.goBack()} />
       </View>
     </GestureHandlerRootView>
   );
 }
-function DetailsScreen() {
+function DetailsScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <View
+      style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 20,
+      }}
+    >
       <Text>Details Screen</Text>
+      <Button
+        title="Go to Details Screen ... again"
+        onPress={() => {
+          navigation.push("Details");
+        }}
+      />
+      <Button title="Go Home" onPress={() => navigation.navigate("Home")} />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+      <Button title="Pop to top" onPress={() => navigation.popToTop()} />
     </View>
   );
 }
