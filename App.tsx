@@ -19,6 +19,7 @@ function ProfileScreen() {
     </GestureHandlerRootView>
   );
 }
+
 function SettingScreen({ route, navigation }) {
   return (
     <GestureHandlerRootView>
@@ -28,7 +29,16 @@ function SettingScreen({ route, navigation }) {
         <Button
           title="update Title by Set Opt"
           onPress={() => {
-            navigation.setOptions({ title: "New Setting " });
+            navigation.setOptions({
+              title: "New Setting ",
+              headerStyle: {
+                backgroundColor: "#f4511e",
+              },
+              headerTintColor: "#fff",
+              headerTitleStyle: {
+                fontWeight: "bold",
+              },
+            });
           }}
         />
       </View>
@@ -75,7 +85,20 @@ function App() {
     <NavigationContainer>
       <MyDrawer.Navigator>
         <MyDrawer.Screen name="Root" component={RootScreen} />
-        <MyDrawer.Screen name="Home" component={HomeScreen} />
+        <MyDrawer.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            title: "My home",
+            headerStyle: {
+              backgroundColor: "#f4511e",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
+        />
       </MyDrawer.Navigator>
     </NavigationContainer>
   );
