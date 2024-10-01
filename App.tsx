@@ -5,6 +5,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 // import { View } from "react-native-reanimated/lib/typescript/Animated";
 import { Text, View } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 function HomeScreen() {
   return (
@@ -17,13 +18,14 @@ function HomeScreen() {
 }
 
 const Drawer = createDrawerNavigator();
+const MyStack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={HomeScreen} />
-      </Drawer.Navigator>
+      <MyStack.Navigator>
+        <MyStack.Screen name="Home" component={HomeScreen} />
+      </MyStack.Navigator>
     </NavigationContainer>
   );
 }
