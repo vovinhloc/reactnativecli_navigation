@@ -19,18 +19,12 @@ function ProfileScreen() {
     </GestureHandlerRootView>
   );
 }
-function SettingScreen({ route, navigation }) {
+function SettingScreen({ route }) {
   return (
     <GestureHandlerRootView>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Text>Setting Screen</Text>
         <Text>id : {route.params?.id}</Text>
-        <Button
-          title="update Title by Set Opt"
-          onPress={() => {
-            navigation.setOptions({ title: "New Setting " });
-          }}
-        />
       </View>
     </GestureHandlerRootView>
   );
