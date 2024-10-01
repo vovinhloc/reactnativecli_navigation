@@ -11,20 +11,35 @@ function HomeScreen() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Home Screen</Text>
+        <Text>Home Screen1</Text>
       </View>
     </GestureHandlerRootView>
   );
 }
-
+function DetailsScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Details Screen</Text>
+    </View>
+  );
+}
 const Drawer = createDrawerNavigator();
 const MyStack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <MyStack.Navigator>
-        <MyStack.Screen name="Home" component={HomeScreen} />
+      <MyStack.Navigator initialRouteName="Home">
+        <MyStack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Trang chủ" }}
+        />
+        <MyStack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{ title: "Trang chi tiết" }}
+        />
       </MyStack.Navigator>
     </NavigationContainer>
   );
