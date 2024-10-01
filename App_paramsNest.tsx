@@ -33,11 +33,7 @@ function RootScreen() {
   return (
     <MyStack.Navigator>
       <MyStack.Screen name="Profile" component={ProfileScreen} />
-      <MyStack.Screen
-        name="Setting"
-        component={SettingScreen}
-        options={({ route }) => ({ title: "Setting " + route.params?.id })}
-      />
+      <MyStack.Screen name="Setting" component={SettingScreen} />
     </MyStack.Navigator>
   );
 }
