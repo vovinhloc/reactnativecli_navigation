@@ -48,7 +48,11 @@ function SettingScreen({ route, navigation }) {
 function RootScreen() {
   return (
     <MyStack.Navigator>
-      <MyStack.Screen name="Profile" component={ProfileScreen} />
+      <MyStack.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{ title: "trang Profile" }}
+      />
       <MyStack.Screen
         name="Setting"
         component={SettingScreen}
@@ -84,7 +88,11 @@ function App() {
   return (
     <NavigationContainer>
       <MyDrawer.Navigator>
-        <MyDrawer.Screen name="Root" component={RootScreen} />
+        <MyDrawer.Screen
+          name="Root"
+          component={RootScreen}
+          options={{ headerShown: false }}
+        />
         <MyDrawer.Screen
           name="Home"
           component={HomeScreen}
